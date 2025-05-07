@@ -1,7 +1,7 @@
 ---
 title:  "A VDI Adventure – From Home-Worker to Server Admin"
 date:   2021-12-10
-image:  /assets/img/vdi_adventure.png   # replace with slide cover
+image:  /assets/img/vdi_adventure.webp   # replace with slide cover
 summary: "m0leCon 2021 talk showing how we exfiltrated data and escaped Citrix sandboxes."
 ---
 

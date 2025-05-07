@@ -1,7 +1,7 @@
 ---
 title:  "Jackpotting Simulation – ATM Red Team for major Financial Istitution"
 date:   2024-07-16
-image:  /assets/img/atm_redteam.png      # replace with lab photo
+image:  /assets/img/atm_redteam.webp      # replace with lab photo
 summary: "End-to-end test proved €0-to-cash-out in < 5 min using a €50 toolset and Raspberry Pi HID implant."
 ---
 

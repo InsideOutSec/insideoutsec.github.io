@@ -1,7 +1,7 @@
 ---
 title:  "Cyber-Threats in Guided-Transport Systems"
 date:   2024-12-06
-image:  /assets/img/tramway_security.png  # slide thumbnail
+image:  /assets/img/tramway_security.webp  # slide thumbnail
 summary: "National seminar (MIT Rome) talk on IT/OT convergence risks in tram & metro networks."
 ---
 
