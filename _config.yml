@@ -1,0 +1,36 @@
+title: "InsideOut Sec S.r.l."
+description: "Offensive Security & Strategic Advisory"
+url: "https://insideoutsec.github.io"
+baseurl: ""                       # root of the site
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# -------------------------------------------------
+#  COLLECTIONS
+# -------------------------------------------------
+collections:
+  casestudies:
+    output: true                  # build a page for each file
+    permalink: /casestudies/:title/
+
+# -------------------------------------------------
+#  DEFAULTS  (apply casestudy layout automatically)
+# -------------------------------------------------
+defaults:
+  - scope:
+      path: ""                    # entire repo
+      type: casestudies
+    values:
+      layout: casestudy           # uses _layouts/casestudy.html
+
+# -------------------------------------------------
+#  SASS / BOOTSTRAP
+# -------------------------------------------------
+sass:
+  load_paths:
+    - assets/vendor               # contains bootstrap scss
+  sass_dir: assets/css
+  style: compressed

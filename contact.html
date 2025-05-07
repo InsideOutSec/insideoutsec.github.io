@@ -1,0 +1,49 @@
+---
+layout: default
+title: Contact Us
+permalink: /contact/
+---
+
+<section class="container py-5" style="max-width: 700px;" data-aos="fade-up">
+  <h1 class="section-heading text-center mb-4" style="margin-top: 3rem;">Start Your Engagement</h1>
+  <p class="text-center mb-4">Let’s discuss your needs securely. No marketing. No noise. Just real talk.</p>
+
+  <form action="https://api.web3forms.com/submit" method="POST" class="card p-4 shadow-sm" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem;">
+    <input type="hidden" name="access_key" value="6bdbd06f-c356-4cbb-95e7-efc821d5fc50">
+    <input type="hidden" name="subject" value="New Submission from InsideOutSec Contact Page">
+  
+    <div class="mb-3">
+      <label for="name" class="form-label">Your Name</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+  
+    <div class="mb-3">
+      <label for="email" class="form-label">Your Email</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+  
+    <div class="mb-3">
+      <label for="message" class="form-label">Your Message</label>
+      <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+    </div>
+  
+    <!-- 🛡️ hCaptcha box -->
+    <div class="mb-3">
+      <div class="h-captcha" data-sitekey="aafc0478-921a-47dc-bd04-9ad671ea5224"
+           data-captcha="true" 
+           data-lang="en" 
+           data-theme="dark"
+           data-render="explicit"
+           data-size="compact" id="captcha-container"></div>
+    </div>
+  
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </div>
+  </form>
+</section>
+
+
+
+
+  

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="linkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"  stop-color="#66fcf1"/>
+      <stop offset="100%" stop-color="#7b61ff"/>
+    </linearGradient>
+    <!-- three reusable straight paths -->
+    <path id="p1" d="M12 0 L88 0" />
+    <path id="p2" d="M0 50 L100 50" />
+    <path id="p3" d="M12 100 L88 100" />
+  </defs>
+
+  <!-- dashed lines that will be animated via CSS -->
+  <use href="#p1" stroke="url(#linkGrad)" stroke-width="2" fill="none"
+       stroke-dasharray="6 6" class="link"/>
+  <use href="#p2" stroke="url(#linkGrad)" stroke-width="2" fill="none"
+       stroke-dasharray="6 6" class="link"/>
+  <use href="#p3" stroke="url(#linkGrad)" stroke-width="2" fill="none"
+       stroke-dasharray="6 6" class="link"/>
+</svg>

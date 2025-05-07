@@ -1,0 +1,27 @@
+show # Jekyll build output
+_site/
+/vendor/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ruby dependencies
+.bundle/
+vendor/bundle/
+
+# System/Editor files
+.DS_Store
+*.swp
+*.swo
+*.bak
+*.tmp
+*.log
+
+# Node (if using npm packages)
+node_modules/
+
+# VS Code settings
+.vscode/
+
+# Other assets you compile locally (optional)
+assets/css/main.css

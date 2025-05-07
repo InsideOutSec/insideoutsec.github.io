@@ -1,0 +1,109 @@
+---
+layout: default
+---
+
+<!-- ===== Hero / Masthead ===== -->
+<header class="masthead position-relative" id="page-top">
+  <canvas id="heroGrid" class="position-absolute start-0 top-0 w-100 h-100" style="z-index:-3"></canvas>
+  <div class="bg-animated"></div>
+
+  <div class="container" data-aos="fade-up">
+    <h1 class="visually-hidden">{{ site.title }} – Boutique Cybersecurity Firm</h1>
+
+    <img src="{{ '/assets/img/InsideOutSec_logo_def.png' | relative_url }}" alt="InsideOut Logo">
+    <p class="lead">Think like an attacker. Defend like a pro.</p>
+    <a href="#about" class="btn btn-primary">Assess. Secure. Transform.</a>
+  </div>
+</header>
+
+<!-- ===== About ===== -->
+<section id="about" class="container py-5" data-aos="fade-up">
+  <h2 class="section-heading text-center mb-4">About Us</h2>
+  {{ site.data.copy.about | markdownify }}
+</section>
+
+<!-- ===== Services ===== -->
+<section id="services" class="bg-dark py-5" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-heading text-center mb-5">Our Services</h2>
+
+    <div class="row text-center position-relative">
+      <!-- animated dashed lines between cards -->
+      <figure class="service-links position-absolute start-0 top-0 w-100 h-100 m-0">
+        {% include card-links.svg %}
+      </figure>
+
+      {% for s in site.data.services %}
+      <div class="col-md-3">
+        <div class="service-box card h-100 p-3 shadow-sm">
+          <i class="{{ s.icon }}"></i>
+          <h5 class="mt-2">{{ s.title }}</h5>
+          <p>{{ s.desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ===== Why Us ===== -->
+<section id="why" class="container py-5" data-aos="fade-up">
+  <h2 class="section-heading text-center mb-4">Why Choose InsideOut Sec?</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <ul class="list-unstyled ps-3">
+        {% for w in site.data.why %}
+        <li class="mb-2"><strong>{{ w.title }}:</strong> {{ w.text }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Portfolio / Case Studies ===== -->
+<section id="portfolio" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-heading text-center mb-5">Featured Case Studies</h2>
+
+    <div class="row">
+      {% for c in site.casestudies limit:3 %}
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 service-box">
+          <img src="{{ c.image | relative_url }}" class="card-img-top" alt="{{ c.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ c.title }}</h5>
+            <p class="card-text">{{ c.summary }}</p>
+            <a href="{{ c.url | relative_url }}" class="stretched-link"></a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <p class="text-center mt-4">
+      <!-- secondary CTA as outline button -->
+      <a href="{{ '/casestudies/' | relative_url }}" class="btn btn-outline-accent">
+        View All Case Studies
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- ===== Talks / Conferences ===== -->
+<section id="talks" class="container py-5" data-aos="fade-up">
+  <h2 class="section-heading text-center mb-5">Talks &amp; Conferences</h2>
+  <ul>
+    {% for t in site.data.talks %}
+    <li><strong>{{ t.title }}</strong> – {{ t.event }} ({{ t.year }})</li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section id="contact-cta" class="text-center py-5" data-aos="fade-up">
+  <div class="container">
+    <h3>Have a challenge worth solving?</h3>
+    <p class="lead">Let’s discuss your security goals and how we can help.</p>
+    <a href="/contact/" class="btn btn-primary btn-lg mt-2">Contact Us</a>
+  </div>
+</section>
+
