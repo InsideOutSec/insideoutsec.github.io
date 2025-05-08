@@ -4,9 +4,9 @@
       <source srcset="{{ '/assets/img/InsideOutSec_logo_def.webp' | relative_url }}" type="image/webp">
       <img src="{{ '/assets/img/InsideOutSec_logo_def.png' | relative_url }}" alt="InsideOut Sec Logo" height="32">
     </picture>
-    <span class="fw-semibold fs-6" style="color: var(--clr-accent-2);">InsideOut Sec</span>
+    <span class="fw-semibold fs-5 nav-brand-label-gradient" id="navbarBrandLabel">InsideOut Sec</span>
   </a>
-  
+
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -14,7 +14,6 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ms-auto">
       {%- assign links = site.data.nav | default: 'about,services,why,talks,casestudies,contact' | split: ',' -%}
-
       {%- for anchor in links -%}
         {% if anchor == 'casestudies' %}
           {% assign link_url = '/casestudies/' | relative_url %}
@@ -23,20 +22,20 @@
         {% else %}
           {% assign link_url = '/' | relative_url | append: '#' | append: anchor %}
         {% endif %}
-      <li class="nav-item">
-        <a class="nav-link{% if page.url == link_url %} active{% endif %}" href="{{ link_url }}">
-          {{ anchor | capitalize }}
-        </a>
-      </li>
+
+        <li class="nav-item">
+          <a class="nav-link{% if page.url == link_url %} active{% endif %}" href="{{ link_url }}">
+            {{ anchor | capitalize }}
+          </a>
+        </li>
       {%- endfor -%}
 
-      <!-- theme toggle still here -->
+      <!-- Theme toggle -->
       <li class="nav-item d-flex align-items-center">
         <button id="themeToggle" class="btn btn-sm ms-3">
           ☀︎ / ☾
         </button>
       </li>
-
     </ul>
   </div>
 </nav>

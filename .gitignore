@@ -16,6 +16,7 @@ vendor/bundle/
 *.bak
 *.tmp
 *.log
+*.sh
 
 # Node (if using npm packages)
 node_modules/

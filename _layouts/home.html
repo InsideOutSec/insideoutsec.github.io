@@ -13,6 +13,7 @@ layout: default
       <source srcset="{{ '/assets/img/InsideOutSec_logo_def.webp' | relative_url }}" type="image/webp">
       <img src="{{ '/assets/img/InsideOutSec_logo_def.png' | relative_url }}" alt="InsideOut Logo">
     </picture>
+    <div id="hero-logo-marker"></div>
     <p class="lead">Think like an attacker. Defend like a pro.</p>
     <a href="#about" class="btn btn-primary">Assess. Secure. Transform.</a>
   </div>
@@ -72,7 +73,14 @@ layout: default
       {% for c in site.casestudies limit:3 %}
       <div class="col-md-4 mb-4">
         <div class="card h-100 service-box">
-          <img src="{{ c.image | relative_url }}" class="card-img-top" alt="{{ c.title }}">
+          <img
+            src="{{ c.image | relative_url }}"
+            srcset="{{ c.image | replace: '.webp', '-sm.webp' | relative_url }} 480w,
+                    {{ c.image | relative_url }} 960w"
+            sizes="(max-width: 600px) 480px, 960px"
+            class="card-img-top"
+            alt="{{ c.title }}"
+            {% if forloop.first == false %}loading="lazy"{% endif %}>
           <div class="card-body case-card text-start">
             <h5 class="card-title">{{ c.title }}</h5>
             <p class="card-text">{{ c.summary }}</p>
@@ -81,7 +89,7 @@ layout: default
         </div>
       </div>
       {% endfor %}
-    </div>
+    </div>    
     <p class="text-center mt-4">
       <!-- secondary CTA as outline button -->
       <a href="{{ '/casestudies/' | relative_url }}" class="btn btn-outline-accent">
