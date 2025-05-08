@@ -3,6 +3,11 @@ title:  "A VDI Adventure – From Home-Worker to Server Admin"
 date:   2021-12-10
 image:  /assets/img/vdi_adventure.webp   # replace with slide cover
 summary: "m0leCon 2021 talk showing how we exfiltrated data and escaped Citrix sandboxes."
+description: "m0leCon 2021 talk showing how we exfiltrated data and escaped Citrix sandboxes."
+resources:
+  - label: Slides
+    type: pdf
+    url: /assets/docs/A_VDI_adventure.pdf
 ---
 
 ## Context  
@@ -21,6 +26,4 @@ During a five-day red-team for **“MegaCorp”**, we assessed a Citrix VDI used
 
 * Full domain-admin in **≤ 1 day**.  
 * Demonstrated data exfiltration routes that bypassed DLP / SSL inspection.  
-* Customer implemented PAC-file hardening, device isolation, and GPO whitelisting.  
-
-[Slide deck (PDF)](/assets/docs/A_VDI_adventure.pdf)
+* Customer implemented PAC-file hardening, device isolation, and GPO whitelisting.

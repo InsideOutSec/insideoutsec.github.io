@@ -3,6 +3,11 @@ title:  "Cyber-Threats in Guided-Transport Systems"
 date:   2024-12-06
 image:  /assets/img/tramway_security.webp  # slide thumbnail
 summary: "National seminar (MIT Rome) talk on IT/OT convergence risks in tram & metro networks."
+description: "Talk on digitalisation and attack vectors in smart rail systems at MIT Rome."
+resources:
+  - label: Slides
+    type: pdf
+    url: /assets/docs/CyberSec_Sistemi_GuidaVincolata.pdf
 ---
 
 At the **10ᵗʰ National Tram-System Seminar** (Ministry of Infrastructure & Transport, Rome) we outlined how digitalisation, CBTC & SCADA expose rail networks to ransomware, sabotage and supply-chain attacks.  
@@ -15,5 +20,3 @@ At the **10ᵗʰ National Tram-System Seminar** (Ministry of Infrastructure & Tr
 * **Controls roadmap:** IEC 62443 zoning, anomaly detection on CAN frames, continuous red-/purple-team drills.
 
 > “Assessment, patch discipline, and audit loops reduce incident probability while boosting passenger trust.”
-
-Slides: `/assets/docs/CyberSec_Sistemi_GuidaVincolata.pdf`

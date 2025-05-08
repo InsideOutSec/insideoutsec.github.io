@@ -117,6 +117,28 @@ p{line-height:1.6}
 .service-box i{font-size:2.5rem;color:var(--clr-accent-2);margin-bottom:15px}
 .card img{object-fit:cover}
 
+.card-ghost {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  color: var(--bs-body-color); // This adapts per theme
+}
+
+.card-ghost h5, .card-ghost h6 {
+  color: var(--bs-emphasis-color); // Bootstrap 5.3 contextual color
+}
+
+.case-card .card-title {
+  color: var(--clr-accent);
+  font-weight: 600;
+}
+
+.case-card .card-text {
+  color: var(--clr-text);
+  font-size: 0.95rem;
+}
+
+
 /* ========================================================================
    6. Sections & anchor offset
    ===================================================================== */
@@ -164,6 +186,14 @@ body::before{
     background:radial-gradient(circle,rgba(102,252,241,.15) 0%,transparent 70%);
     transition:top .05s,left .05s;pointer-events:none;z-index:-2
   }
+}
+
+body {
+  cursor: url('/assets/img/cursor_out2.svg') 14 14, auto;
+}
+
+a, .btn, .nav-link {
+  cursor: url('/assets/img/pointer_out.svg') 2 2, pointer;
 }
 
 /* ========================================================================
@@ -283,11 +313,6 @@ body::before{
     }
   }
 
-  // body[data-page="casestudies"] section.container {
-  //   padding-top: 6rem;
-  //   scroll-margin-top: 6rem;
-  // }
-
   /* ──────────────────────────────────────────────────────────
    Global anchor offset for fixed navbar
 ────────────────────────────────────────────────────────── */
@@ -344,4 +369,12 @@ section.thanks {
     color: var(--clr-fg);
     margin-bottom: 2rem;
   }
+}
+
+.talk-event {
+  color: #adbdcc; // Light gray that’s visible in both themes
+}
+
+[data-bs-theme="dark"] .talk-event {
+  color: #dee2e6; // Lighter gray on dark for proper contrast
 }

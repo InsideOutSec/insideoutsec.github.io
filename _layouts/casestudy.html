@@ -8,18 +8,35 @@ layout: default
 
     {{ content }}
 
+    {% if page.resources %}
     <hr class="my-4">
+    <div class="container pb-4">
+      <div class="row g-3">
+        {% for r in page.resources %}
+        <div class="col-auto">
+          <a href="{{ r.url }}" target="_blank" rel="noopener" class="btn btn-outline-primary">
+            {% if r.type == "pdf" %}
+              📄 {{ r.label }}
+            {% elsif r.type == "video" %}
+              🎥 {{ r.label }}
+            {% else %}
+              🔗 {{ r.label }}
+            {% endif %}
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
 
-<!-- CTA row -->
-<!---- call-to-action strip -->
-<div class="container py-5">
-  <div class="d-flex justify-content-between align-items-center">
-    <a href="{{ '/' | relative_url }}casestudies/"
-       class="btn btn-outline-primary">
-      ← Back to all case studies
-    </a>
-    <a href="/contact/" class="btn btn-primary">Start Your Engagement</a>
-  </div>
-</div>
+    <!-- CTA row -->
+    <div class="container py-5">
+      <div class="d-flex justify-content-between align-items-center">
+        <a href="{{ '/' | relative_url }}casestudies/" class="btn btn-outline-primary">
+          ← Back to all case studies
+        </a>
+        <a href="/contact/" class="btn btn-primary">Start Your Engagement</a>
+      </div>
+    </div>
   </article>
 </div>

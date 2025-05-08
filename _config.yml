@@ -1,7 +1,19 @@
-title: "InsideOut Sec S.r.l."
-description: "Offensive Security & Strategic Advisory"
-url: "https://insideoutsec.io"
-baseurl: ""                       # root of the site
+title: InsideOut Sec
+description: Offensive cybersecurity assessments, red teaming, and strategic resilience for high-value targets.
+url: https://insideoutsec.io
+logo: /assets/img/InsideOutSec_logo_def.webp
+baseurl: "/"                       # root of the site
+
+author:
+  name: InsideOut Sec Team
+  email: info@insideoutsec.io
+  twitter: insideoutsec
+
+social:
+  name: InsideOut Sec
+  links:
+    - https://x.com/insideoutsec
+    - https://www.linkedin.com/company/insideout-sec/
 
 plugins:
   - jekyll-sitemap
