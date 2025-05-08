@@ -10,11 +10,11 @@ layout: default
   <div class="container" data-aos="fade-up">
     <h1 class="visually-hidden">{{ site.title }} – Offensive Cybersecurity Firm</h1>
     <picture>
-      <source srcset="{{ '/assets/img/InsideOutSec_logo_def.webp' | relative_url }}" type="image/webp">
-      <img src="{{ '/assets/img/InsideOutSec_logo_def.png' | relative_url }}" alt="InsideOut Logo">
+      <source srcset="{{ '/assets/img/InsideOutSec_logo_def.avif' | relative_url }}" type="image/avif">
+      <img src="{{ '/assets/img/InsideOutSec_logo_def.png' | relative_url }}" alt="InsideOut Logo" loading="lazy">
     </picture>
-    <div id="hero-logo-marker"></div>
     <p class="lead">Think like an attacker. Defend like a pro.</p>
+    <div id="hero-logo-marker"></div>
     <a href="#about" class="btn btn-primary">Assess. Secure. Transform.</a>
   </div>
 </header>
@@ -73,14 +73,23 @@ layout: default
       {% for c in site.casestudies limit:3 %}
       <div class="col-md-4 mb-4">
         <div class="card h-100 service-box">
-          <img
-            src="{{ c.image | relative_url }}"
-            srcset="{{ c.image | replace: '.webp', '-sm.webp' | relative_url }} 480w,
-                    {{ c.image | relative_url }} 960w"
-            sizes="(max-width: 600px) 480px, 960px"
-            class="card-img-top"
-            alt="{{ c.title }}"
-            {% if forloop.first == false %}loading="lazy"{% endif %}>
+          <picture>
+            <source type="image/avif"
+                    srcset="{{ c.image | replace: '.webp', '-480.avif' | relative_url }} 480w,
+                            {{ c.image | replace: '.webp', '-720.avif' | relative_url }} 720w,
+                            {{ c.image | replace: '.webp', '.avif' | relative_url }} 960w"
+                    sizes="(max-width: 1024px) 480px, 960px">
+            <source type="image/webp"
+                    srcset="{{ c.image | replace: '.webp', '-480.webp' | relative_url }} 480w,
+                            {{ c.image | replace: '.webp', '-720.webp' | relative_url }} 720w,
+                            {{ c.image | relative_url }} 960w"
+                    sizes="(max-width: 1024px) 480px, 960px">
+            <img
+              src="{{ c.image | relative_url }}"
+              alt="{{ c.title }}"
+              class="card-img-top"
+              {% unless forloop.first %}loading="lazy"{% endunless %}>
+          </picture>          
           <div class="card-body case-card text-start">
             <h5 class="card-title">{{ c.title }}</h5>
             <p class="card-text">{{ c.summary }}</p>

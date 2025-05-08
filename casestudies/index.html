@@ -11,14 +11,23 @@ permalink: /casestudies/
     {% for c in site.casestudies %}
 <div class="col-md-4 mb-4">
   <div class="card h-100 shadow-sm service-box">
-    <img
-      src="{{ c.image | default: '/assets/img/placeholder.jpg' | relative_url }}"
-      srcset="{{ c.image | default: '/assets/img/placeholder.jpg' | replace: '.webp', '-sm.webp' | relative_url }} 480w,
-              {{ c.image | default: '/assets/img/placeholder.jpg' | relative_url }} 960w"
-      sizes="(max-width: 600px) 480px, 960px"
-      class="card-img-top"
-      alt="{{ c.title }}"
-      loading="lazy">
+    <picture>
+      <source type="image/avif"
+              srcset="{{ c.image | replace: '.webp', '-480.avif' | relative_url }} 480w,
+                      {{ c.image | replace: '.webp', '-720.avif' | relative_url }} 720w,
+                      {{ c.image | replace: '.webp', '.avif' | relative_url }} 960w"
+              sizes="(max-width: 1024px) 480px, 960px">
+      <source type="image/webp"
+              srcset="{{ c.image | replace: '.webp', '-480.webp' | relative_url }} 480w,
+                      {{ c.image | replace: '.webp', '-720.webp' | relative_url }} 720w,
+                      {{ c.image | relative_url }} 960w"
+              sizes="(max-width: 1024px) 480px, 960px">
+      <img
+        src="{{ c.image | relative_url }}"
+        alt="{{ c.title }}"
+        class="card-img-top"
+        loading="lazy">
+    </picture>
     <div class="card-body">
       <h5 class="card-title">{{ c.title }}</h5>
       <p class="card-text">{{ c.summary }}</p>
