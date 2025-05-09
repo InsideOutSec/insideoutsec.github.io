@@ -13,9 +13,9 @@ permalink: /casestudies/
   <div class="card h-100 shadow-sm service-box">
     <picture>
       <source type="image/avif"
-              srcset="{{ c.image | replace: '.webp', '-480.avif' | relative_url }} 480w,
-                      {{ c.image | replace: '.webp', '-720.avif' | relative_url }} 720w,
-                      {{ c.image | replace: '.webp', '.avif' | relative_url }} 960w"
+              srcset="{{ c.image | replace: '.avif', '-480.avif' | relative_url }} 480w,
+                      {{ c.image | replace: '.avif', '-720.avif' | relative_url }} 720w,
+                      {{ c.image | relative_url }} 960w"
               sizes="(max-width: 1024px) 480px, 960px">
       <source type="image/webp"
               srcset="{{ c.image | replace: '.webp', '-480.webp' | relative_url }} 480w,

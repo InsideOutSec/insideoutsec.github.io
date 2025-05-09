@@ -75,9 +75,9 @@ layout: default
         <div class="card h-100 service-box">
           <picture>
             <source type="image/avif"
-                    srcset="{{ c.image | replace: '.webp', '-480.avif' | relative_url }} 480w,
-                            {{ c.image | replace: '.webp', '-720.avif' | relative_url }} 720w,
-                            {{ c.image | replace: '.webp', '.avif' | relative_url }} 960w"
+                    srcset="{{ c.image | replace: '.avif', '-480.avif' | relative_url }} 480w,
+                            {{ c.image | replace: '.avif', '-720.avif' | relative_url }} 720w,
+                            {{ c.image | relative_url }} 960w"
                     sizes="(max-width: 1024px) 480px, 960px">
             <source type="image/webp"
                     srcset="{{ c.image | replace: '.webp', '-480.webp' | relative_url }} 480w,
@@ -93,7 +93,7 @@ layout: default
           <div class="card-body case-card text-start">
             <h5 class="card-title">{{ c.title }}</h5>
             <p class="card-text">{{ c.summary }}</p>
-            <a href="{{ c.url | relative_url }}" class="stretched-link"></a>
+            <a href="{{ c.url | relative_url }}" class="stretched-link" aria-label="Read case study: {{ c.title }}"></a>
           </div>
         </div>
       </div>
@@ -116,7 +116,7 @@ layout: default
     {% for t in site.data.talks %}
     <div class="col-md-6">
       <div class="border-start border-3 ps-3 h-100" style="border-color: var(--bs-primary);">
-        <h6 class="fw-semibold mb-1 text-emphasis">{{ t.title }}</h6>
+        <h5 class="fw-semibold mb-1 text-emphasis">{{ t.title }}</h5>
         <p class="mb-0 small talk-event">{{ t.event }} – {{ t.year }}</p>      </div>
     </div>
     {% endfor %}

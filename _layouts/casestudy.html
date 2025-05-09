@@ -16,11 +16,11 @@ layout: default
         <div class="col-auto">
           <a href="{{ r.url }}" target="_blank" rel="noopener" class="btn btn-outline-primary">
             {% if r.type == "pdf" %}
-              📄 {{ r.label }}
+              aria-label="View PDF: {{ r.label }}"
             {% elsif r.type == "video" %}
-              🎥 {{ r.label }}
+              aria-label="Watch video: {{ r.label }}"
             {% else %}
-              🔗 {{ r.label }}
+              aria-label="{{ r.label }}"
             {% endif %}
           </a>
         </div>
