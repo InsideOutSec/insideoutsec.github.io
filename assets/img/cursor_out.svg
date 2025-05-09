@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="32"
-   height="32"
-   viewBox="0 0 8.466666 8.4666667"
+   width="31.999998"
+   height="31.999998"
+   viewBox="0 0 8.466666 8.4666661"
    version="1.1"
    id="svg1"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -13,6 +13,68 @@
   <defs
      id="defs1">
     <radialGradient
+       id="radialGradient30"
+       data-name="Sfumatura senza nome 16"
+       cx="-21.620001"
+       cy="536.82001"
+       fx="-21.620001"
+       fy="536.82001"
+       r="383.32999"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#19dc78"
+         id="stop26"
+         style="stop-color:#19dc78;stop-opacity:0.62801743;" />
+      <stop
+         offset=".15"
+         stop-color="#26c987"
+         id="stop27" />
+      <stop
+         offset=".46"
+         stop-color="#4a98af"
+         id="stop28" />
+      <stop
+         offset=".9"
+         stop-color="#8349ef"
+         id="stop29" />
+      <stop
+         offset="1"
+         stop-color="#9137ff"
+         id="stop30" />
+    </radialGradient>
+    <radialGradient
+       id="radialGradient25"
+       data-name="Sfumatura senza nome 16"
+       cx="-21.620001"
+       cy="536.82001"
+       fx="-21.620001"
+       fy="536.82001"
+       r="383.32999"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#19dc78"
+         id="stop21"
+         style="stop-color:#19dc78;stop-opacity:0.30809084;" />
+      <stop
+         offset=".15"
+         stop-color="#26c987"
+         id="stop22" />
+      <stop
+         offset=".46"
+         stop-color="#4a98af"
+         id="stop23" />
+      <stop
+         offset=".9"
+         stop-color="#8349ef"
+         id="stop24" />
+      <stop
+         offset="1"
+         stop-color="#9137ff"
+         id="stop25" />
+    </radialGradient>
+    <radialGradient
        id="Sfumatura_senza_nome_16-3"
        data-name="Sfumatura senza nome 16"
        cx="-20.309999"
@@ -20,7 +82,7 @@
        fx="-20.309999"
        fy="549.89001"
        r="400.97"
-       xlink:href="#Sfumatura_senza_nome_16" />
+       xlink:href="#radialGradient25" />
     <radialGradient
        id="Sfumatura_senza_nome_16"
        data-name="Sfumatura senza nome 16"
@@ -68,7 +130,7 @@
        fx="-20.309999"
        fy="535.40002"
        r="380.75"
-       xlink:href="#Sfumatura_senza_nome_16" />
+       xlink:href="#radialGradient30" />
     <radialGradient
        id="Sfumatura_senza_nome_16-6"
        data-name="Sfumatura senza nome 16"
@@ -80,42 +142,41 @@
        xlink:href="#Sfumatura_senza_nome_16" />
   </defs>
   <g
-     id="layer1"
-     transform="translate(-92.339583,-126.20625)">
+     id="layer1">
+    <rect
+       class="cls-1"
+       x="-1.4571431"
+       y="5.4392934"
+       width="1.4715832"
+       height="1.4715832"
+       rx="0.12157246"
+       ry="0.12157246"
+       transform="matrix(0.78986662,-0.61327866,0.78986662,0.61327866,0,0)"
+       id="rect13"
+       style="opacity:0.9;fill:#9137ff;fill-opacity:0.89954;stroke-width:0.0794589" />
     <g
        id="g18"
-       transform="matrix(0.08742103,0,0,0.04967684,92.405729,107.38547)">
+       transform="matrix(0.08781218,0,0,0.04876979,0.04340743,-18.391897)">
       <path
          class="cls-4"
          d="m 0,432.02 v 25.89 h 29.11 v -25.89 c 0,-16.28 4.86,-24.32 12.56,-26.84 V 379.54 C 14.08,382.07 0,402.09 0,432.03 Z"
          id="path15"
-         style="fill:url(#Sfumatura_senza_nome_16-3)" />
+         style="opacity:0.6;fill:url(#Sfumatura_senza_nome_16-3)" />
       <path
          class="cls-6"
          d="m 95.51,432.02 c 0,-29.94 -14.08,-49.96 -41.67,-52.49 v 24.86 c 0,0.47 0.3,0.88 0.74,1.05 7.27,2.79 11.82,10.83 11.82,26.58 v 25.89 h 29.11 z"
          id="path16"
-         style="fill:url(#Sfumatura_senza_nome_16-4)" />
+         style="opacity:0.6;fill:url(#Sfumatura_senza_nome_16-4)" />
       <path
          class="cls-5"
          d="M 29.11,496.17 V 470.28 H 0 v 25.89 c 0,29.94 14.08,49.96 41.67,52.49 V 523.02 C 33.97,520.5 29.11,512.46 29.11,496.18 Z"
          id="path17"
-         style="fill:url(#Sfumatura_senza_nome_16-5)" />
+         style="opacity:0.6;fill:url(#Sfumatura_senza_nome_16-5)" />
       <path
          class="cls-7"
          d="M 95.51,470.29 H 66.4 v 25.89 c 0,16.28 -4.86,24.32 -12.56,26.84 v 25.64 c 27.59,-2.53 41.67,-22.55 41.67,-52.49 v -25.89 z"
          id="path18"
-         style="fill:url(#Sfumatura_senza_nome_16-6)" />
+         style="opacity:0.6;fill:url(#Sfumatura_senza_nome_16-6)" />
     </g>
-    <rect
-       class="cls-1"
-       x="-24.810425"
-       y="159.83722"
-       width="1.393399"
-       height="1.393399"
-       rx="0.11511339"
-       ry="0.11511339"
-       transform="matrix(0.70782398,-0.70638885,0.70782398,0.70638885,0,0)"
-       id="rect13"
-       style="fill:#9137ff;stroke-width:0.0752374" />
   </g>
 </svg>

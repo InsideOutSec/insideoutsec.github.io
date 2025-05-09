@@ -3,7 +3,7 @@
 This is the official website for [InsideOut Sec](https://insideoutsec.io), a boutique offensive security firm.  
 The site is built using **Jekyll**, styled with **Bootstrap 5**, and deployed via **GitHub Pages**.
 
-![InsideOut Sec Logo](assets/img/InsideOutSec_logo_def.png)
+![InsideOut Sec Logo](assets/img/InsideOutSec_logo.png)
 
 ---
 
