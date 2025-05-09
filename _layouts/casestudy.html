@@ -14,13 +14,20 @@ layout: default
       <div class="row g-3">
         {% for r in page.resources %}
         <div class="col-auto">
-          <a href="{{ r.url }}" target="_blank" rel="noopener" class="btn btn-outline-primary">
+          <a href="{{ r.url }}" target="_blank" rel="noopener" class="btn btn-outline-primary"
+          {% if r.type == "pdf" %}
+            aria-label="View PDF: {{ r.label }}"
+          {% elsif r.type == "video" %}
+            aria-label="Watch video: {{ r.label }}"
+          {% else %}
+            aria-label="{{ r.label }}"
+          {% endif %}>
             {% if r.type == "pdf" %}
-              aria-label="View PDF: {{ r.label }}"
+              📄 {{ r.label }}
             {% elsif r.type == "video" %}
-              aria-label="Watch video: {{ r.label }}"
+              🎥 {{ r.label }}
             {% else %}
-              aria-label="{{ r.label }}"
+              🔗 {{ r.label }}
             {% endif %}
           </a>
         </div>

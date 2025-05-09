@@ -26,7 +26,11 @@ permalink: /contact/
       <label for="message" class="form-label">Your Message</label>
       <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
     </div>
-  
+    
+    {% if page.url == "/contact/" %}
+      <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+    {% endif %}
+
     <!-- 🛡️ hCaptcha box -->
     <div class="mb-3">
       <div class="h-captcha" data-sitekey="aafc0478-921a-47dc-bd04-9ad671ea5224"
