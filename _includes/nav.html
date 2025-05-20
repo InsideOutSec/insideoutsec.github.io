@@ -39,6 +39,19 @@
           ☀︎ / ☾
         </button>
       </li>
+
+      <!-- Language selector -->
+      {% if page.alt_url %}
+      <li class="nav-item dropdown d-flex align-items-center">
+        <button id="langToggle" class="btn btn-sm ms-3 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Select language">
+          {{ page.lang | upcase }}
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="langToggle">
+          <li><a class="dropdown-item{% if page.lang == 'en' %} active{% endif %}" href="{{ page.url | relative_url }}">English</a></li>
+          <li><a class="dropdown-item{% if page.lang == 'it' %} active{% endif %}" href="{{ page.alt_url | relative_url }}">Italiano</a></li>
+        </ul>
+      </li>
+      {% endif %}
     </ul>
   </div>
 </nav>
