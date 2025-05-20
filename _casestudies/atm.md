@@ -1,5 +1,5 @@
 ---
-title:  "Jackpotting Simulation – ATM Red Team for major Financial Istitution"
+title:  "Jackpotting Simulation – ATM Red Team for major Financial Institution"
 date:   2024-07-16
 image:  /assets/img/atm_redteam.avif      # replace with lab photo
 description: "Red team activity for finance corp involving the attack of ATM systems with latest techniques"
