@@ -40,9 +40,11 @@ layout: default
     <div class="container py-5">
       <div class="d-flex justify-content-between align-items-center">
         <a href="{{ '/' | relative_url }}casestudies/" class="btn btn-outline-primary">
-          ← Back to all case studies
+          {% if page.lang == 'it' %}← Tutti i case study{% else %}← Back to all case studies{% endif %}
         </a>
-        <a href="/contact/" class="btn btn-primary">Start Your Engagement</a>
+        <a href="{% if page.lang == 'it' %}/it/contact/{% else %}/contact/{% endif %}" class="btn btn-primary">
+          {% if page.lang == 'it' %}Contattaci{% else %}Start Your Engagement{% endif %}
+        </a>
       </div>
     </div>
   </article>

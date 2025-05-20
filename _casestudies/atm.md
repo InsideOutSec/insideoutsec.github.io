@@ -4,6 +4,8 @@ date:   2024-07-16
 image:  /assets/img/atm_redteam.avif      # replace with lab photo
 description: "Red team activity for finance corp involving the attack of ATM systems with latest techniques"
 summary: "End-to-end test proved €0-to-cash-out in < 5 min using a €50 toolset and Raspberry Pi HID implant."
+lang: en
+alt_url: /it/casestudies/atm/
 ---
 
 ## Objective  

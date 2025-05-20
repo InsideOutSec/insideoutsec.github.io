@@ -20,6 +20,9 @@ plugins:
   - jekyll-seo-tag
   - jekyll-feed
 
+# Default site language
+lang: en
+
 # -------------------------------------------------
 #  COLLECTIONS
 # -------------------------------------------------

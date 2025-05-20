@@ -16,6 +16,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ms-auto">
       {%- assign links = site.data.nav | default: 'about,services,why,talks,casestudies,contact' | split: ',' -%}
+      {%- assign labels = site.data['nav_' | append: page.lang | default: site.lang | default: 'en'] -%}
       {%- for anchor in links -%}
         {% if anchor == 'casestudies' %}
           {% assign link_url = '/casestudies/' | relative_url %}
@@ -27,7 +28,7 @@
 
         <li class="nav-item">
           <a class="nav-link{% if page.url == link_url %} active{% endif %}" href="{{ link_url }}">
-            {{ anchor | capitalize }}
+            {{ labels[anchor] | default: anchor | capitalize }}
           </a>
         </li>
       {%- endfor -%}

@@ -3,6 +3,16 @@
    Global JS – InsideOut Sec (Optimized)
    ========================================================= */
 
+  (function() {
+    const userLang = navigator.languages && navigator.languages.length ? navigator.languages[0] : navigator.language;
+    if (userLang && userLang.toLowerCase().startsWith('it')) {
+      const path = window.location.pathname;
+      if (path === '/' || path === '/index.html') {
+        window.location.replace('/it/');
+      }
+    }
+  })();
+
    document.addEventListener("DOMContentLoaded", function () {
     /* Theme elements */
     const root   = document.documentElement;

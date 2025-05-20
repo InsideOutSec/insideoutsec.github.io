@@ -4,6 +4,8 @@ date:   2024-12-06
 image:  /assets/img/tramway_security.avif  # slide thumbnail
 summary: "National seminar (MIT Rome) talk on IT/OT convergence risks in tram & metro networks."
 description: "Talk on digitalisation and attack vectors in smart rail systems at MIT Rome."
+lang: en
+alt_url: /it/casestudies/transport-security/
 resources:
   - label: Slides
     type: pdf
@@ -19,4 +21,3 @@ At the **10ᵗʰ National Tram-System Seminar** (Ministry of Infrastructure & Tr
 * **Case studies:** Wi-Fi defacement in UK stations (2024), coordinated TGV sabotage pre-Paris Olympics (2024), supply-chain “kill-switch” in Polish rolling-stock (2022).  
 * **Controls roadmap:** IEC 62443 zoning, anomaly detection on CAN frames, continuous red-/purple-team drills.
 
-> “Assessment, patch discipline, and audit loops reduce incident probability while boosting passenger trust.”

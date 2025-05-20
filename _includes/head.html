@@ -2,6 +2,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{{ page.title | default: site.title }}</title>
 {%- seo -%}
+{% if page.alt_url %}
+  {% assign alt_lang = page.lang == "en" ? "it" : "en" %}
+  <link rel="alternate" hreflang="{{ alt_lang }}" href="{{ page.alt_url | absolute_url }}">
+{% endif %}
 
 <!-- Favicons -->
 <link rel="icon" type="image/x-icon" href="{{ '/assets/img/favicon.ico' | relative_url }}">
