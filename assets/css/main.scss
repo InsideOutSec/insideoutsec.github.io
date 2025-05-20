@@ -192,7 +192,7 @@ body {
   cursor: url('/assets/img/cursor_out.svg') 14 14, auto;
 }
 
-a, .btn, .nav-link, .navbar-toggler, #themeToggle {
+a, .btn, .nav-link, .navbar-toggler, #themeToggle, #langToggle {
   cursor: url('/assets/img/pointer_out.svg') 2 2, pointer;
 }
 
@@ -231,7 +231,8 @@ a, .btn, .nav-link, .navbar-toggler, #themeToggle {
 /* ========================================================================
    Theme-toggle button visibility
    ===================================================================== */
-   #themeToggle {
+   #themeToggle,
+   #langToggle {
     background: transparent;
     border: 1px solid var(--clr-accent);
     color: var(--clr-accent);
@@ -242,24 +243,28 @@ a, .btn, .nav-link, .navbar-toggler, #themeToggle {
   }
 
   /* Align theme toggle vertically with .nav-link */
-.navbar .nav-item #themeToggle {
+.navbar .nav-item #themeToggle,
+.navbar .nav-item #langToggle {
   /* inherit nav-link font & height */
   font-size: 0.875rem;      /* Bootstrap nav-link default */
   line-height: 1.5;         /* matches <a> */
   display: flex;            /* center icon text */
   align-items: center;
 }
-  #themeToggle:hover {
+  #themeToggle:hover,
+  #langToggle:hover {
     background: var(--clr-accent);
     color: var(--clr-bg-1);
   }
   
   /* Light-mode variant */
-  [data-theme='light'] #themeToggle {
+  [data-theme='light'] #themeToggle,
+  [data-theme='light'] #langToggle {
     border-color: var(--clr-accent-2);
     color:       var(--clr-accent-2);
   }
-  [data-theme='light'] #themeToggle:hover {
+  [data-theme='light'] #themeToggle:hover,
+  [data-theme='light'] #langToggle:hover {
     background: var(--clr-accent-2);
     color:      var(--clr-bg-1);
   }
