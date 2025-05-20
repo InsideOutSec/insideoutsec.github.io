@@ -1,0 +1,134 @@
+---
+layout: default
+---
+
+<!-- ===== Hero / Masthead ===== -->
+<header class="masthead position-relative" id="page-top">
+  <canvas id="heroGrid" class="position-absolute start-0 top-0 w-100 h-100" style="z-index:-3"></canvas>
+  <div class="bg-animated"></div>
+
+  <div class="container" data-aos="fade-up">
+    <h1 class="visually-hidden">{{ site.title }} – Offensive Cybersecurity Firm</h1>
+    <picture>
+      <source srcset="{{ '/assets/img/InsideOutSec_logo.avif' | relative_url }}" type="image/avif">
+      <img src="{{ '/assets/img/InsideOutSec_logo.png' | relative_url }}" alt="InsideOut Sec Logo" loading="lazy">
+    </picture>
+    <p class="lead">Pensa come un attaccante. Difenditi da professionista.</p>
+    <div id="hero-logo-marker"></div>
+    <a href="#about" class="btn btn-primary">Valuta. Proteggi. Trasforma.</a>
+  </div>
+</header>
+
+<!-- ===== About ===== -->
+<section id="about" class="container py-5 px-3 px-md-5 px-lg-5" data-aos="fade-up">
+  <h2 class="section-heading text-center mb-4">Chi Siamo</h2>
+  {{ site.data.copy_it.about | markdownify }}
+</section>
+
+<!-- ===== Services ===== -->
+<section id="services" class="bg-dark py-5" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-heading text-center mb-5">I nostri servizi</h2>
+
+    <div class="row text-center position-relative gy-4">
+      <!-- animated dashed lines between cards -->
+      <figure class="service-links position-absolute start-0 top-0 w-100 h-100 m-0">
+        {% include card-links.svg %}
+      </figure>
+
+      {% for s in site.data.services_it %}
+      <div class="col-md-3">
+        <div class="service-box card h-100 p-3 px-3 px-md-4 shadow-sm">
+          <i class="{{ s.icon }}" aria-hidden="true"></i>
+          <h5 class="mt-2">{{ s.title }}</h5>
+          <p>{{ s.desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ===== Why Us ===== -->
+<section id="why" class="container py-5 px-3 px-md-5 px-lg-5" data-aos="fade-up">
+  <h2 class="section-heading text-center mb-4">Perché scegliere InsideOut Sec?</h2>
+
+  <div class="row gy-4 justify-content-center">
+    {% for w in site.data.why_it %}
+    <div class="col-md-6 col-lg-5">
+      <div class="service-box card h-100 p-4 shadow-sm text-left">
+        <h5 class="fw-semibold mb-2">{{ w.title }}</h5>
+        <p class="mb-0">{{ w.text }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ===== Portfolio / Case Studies ===== -->
+<section id="portfolio" data-aos="fade-up" class="px-3 px-md-5 px-lg-5">
+  <div class="container">
+    <h2 class="section-heading text-center mb-5">Case study in evidenza</h2>
+    <div class="row">
+      {% for c in site.casestudies limit:3 %}
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 service-box">
+          <picture>
+            <source type="image/avif"
+                    srcset="{{ c.image | replace: '.avif', '-480.avif' | relative_url }} 480w,
+                            {{ c.image | replace: '.avif', '-720.avif' | relative_url }} 720w,
+                            {{ c.image | relative_url }} 960w"
+                    sizes="(max-width: 1024px) 480px, 960px">
+            <source type="image/webp"
+                    srcset="{{ c.image | replace: '.webp', '-480.webp' | relative_url }} 480w,
+                            {{ c.image | replace: '.webp', '-720.webp' | relative_url }} 720w,
+                            {{ c.image | relative_url }} 960w"
+                    sizes="(max-width: 1024px) 480px, 960px">
+            <img
+              src="{{ c.image | relative_url }}"
+              alt="{{ c.title }}"
+              class="card-img-top"
+              {% unless forloop.first %}loading="lazy"{% endunless %}>
+          </picture>          
+          <div class="card-body case-card text-start">
+            <h5 class="card-title">{{ c.title }}</h5>
+            <p class="card-text">{{ c.summary }}</p>
+            <a href="{{ c.url | relative_url }}" class="stretched-link" aria-label="Read case study: {{ c.title }}"></a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>    
+    <p class="text-center mt-4">
+      <!-- secondary CTA as outline button -->
+      <a href="{{ '/casestudies/' | relative_url }}" class="btn btn-outline-accent">
+        Vedi tutti i case study
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- ===== Talks / Conferences ===== -->
+<section id="talks" class="container py-5 px-3 px-md-5 px-lg-5" data-aos="fade-up">
+  <h2 class="section-heading text-center mb-5">Talk e Conferenze</h2>
+
+  <div class="row gy-4">
+    {% for t in site.data.talks %}
+    <div class="col-md-6">
+      <div class="border-start border-3 ps-3 h-100" style="border-color: var(--bs-primary);">
+        <h5 class="fw-semibold mb-1 text-emphasis">{{ t.title }}</h5>
+        <p class="mb-0 small talk-event">{{ t.event }} – {{ t.year }}</p>      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+
+<section id="contact-cta" class="text-center py-5 px-3 px-md-5 px-lg-5" data-aos="fade-up">
+  <div class="container">
+    <h3>Hai una sfida da risolvere?</h3>
+    <p class="lead">Parliamo dei tuoi obiettivi di sicurezza e di come possiamo aiutarti.</p>
+    <a href="/it/contact/" class="btn btn-primary btn-lg mt-2">Contattaci</a>
+  </div>
+</section>
+

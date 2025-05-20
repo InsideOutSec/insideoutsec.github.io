@@ -4,6 +4,8 @@ date:   2021-12-10
 image:  /assets/img/vdi_adventure.avif   # replace with slide cover
 summary: "m0leCon 2021 talk showing how we exfiltrated data and escaped Citrix sandboxes."
 description: "m0leCon 2021 talk showing how we exfiltrated data and escaped Citrix sandboxes."
+lang: en
+alt_url: /it/casestudies/vdi/
 resources:
   - label: Slides
     type: pdf
@@ -26,4 +28,3 @@ During a five-day red-team for **“MegaCorp”**, we assessed a Citrix VDI used
 
 * Full domain-admin in **≤ 1 day**.  
 * Demonstrated data exfiltration routes that bypassed DLP / SSL inspection.  
-* Customer implemented PAC-file hardening, device isolation, and GPO whitelisting.

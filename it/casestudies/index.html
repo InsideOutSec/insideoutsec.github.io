@@ -1,16 +1,17 @@
 ---
 layout: default
-title: Case Studies
-lang: en
-permalink: /casestudies/
-alt_url: /it/casestudies/
+title: Case Study
+lang: it
+permalink: /it/casestudies/
+alt_url: /casestudies/
 ---
 
 <section id="casestudies" class="container py-5" data-aos="fade-up" style="scroll-margin-top: 10rem;">
-  <h1 class="section-heading text-center mb-5" style="margin-top: 2rem;">Case Studies</h1>
+  <h1 class="section-heading text-center mb-5" style="margin-top: 2rem;">Case Study</h1>
 
   <div class="row">
-    {% for c in site.casestudies %}
+    {% assign cases = site.pages | where: "layout", "casestudy" | where: "lang", "it" %}
+    {% for c in cases %}
 <div class="col-md-4 mb-4">
   <div class="card h-100 shadow-sm service-box">
     <picture>
