@@ -70,7 +70,8 @@ layout: default
   <div class="container">
     <h2 class="section-heading text-center mb-5">Case study in evidenza</h2>
     <div class="row">
-      {% for c in site.casestudies limit:3 %}
+      {% assign cases_it = site.pages | where: 'layout', 'casestudy' | where: 'lang', 'it' | sort: 'date' | reverse %}
+      {% for c in cases_it limit:3 %}
       <div class="col-md-4 mb-4">
         <div class="card h-100 service-box">
           <picture>
@@ -101,7 +102,7 @@ layout: default
     </div>    
     <p class="text-center mt-4">
       <!-- secondary CTA as outline button -->
-      <a href="{{ '/casestudies/' | relative_url }}" class="btn btn-outline-accent">
+      <a href="{{ '/it/casestudies/' | relative_url }}" class="btn btn-outline-accent">
         Vedi tutti i case study
       </a>
     </p>

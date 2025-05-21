@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark px-3 fixed-top" role="navigation" aria-label="Main Navigation">
-  <a class="navbar-brand d-flex align-items-center gap-2" href="{{ '/' | relative_url }}" aria-label="Go to homepage">
+  {% assign brand_prefix = page.lang == 'it' ? '/it/' : '/' %}
+  <a class="navbar-brand d-flex align-items-center gap-2" href="{{ brand_prefix | absolute_url | remove_first: '/en' }}" aria-label="Go to homepage">
     <picture>
       <source srcset="{{ '/assets/img/InsideOutSec_logo.webp' | relative_url }}" type="image/webp">
       <source srcset="{{ '/assets/img/InsideOutSec_logo.avif' | relative_url }}" type="image/avif">
@@ -16,16 +17,21 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ms-auto">
       {%- assign links = site.data.nav | default: 'about,services,why,talks,casestudies,contact' | split: ',' -%}
-      {%- assign labels = site.data['nav_' | append: page.lang | default: site.lang | default: 'en'] -%}
+      {%- if page.lang == 'it' -%}
+        {%- assign labels = site.data.nav_it -%}
+      {%- else -%}
+        {%- assign labels = site.data.nav_en -%}
+      {%- endif -%}
+      {%- assign prefix = page.lang == 'it' ? '/it' : '' -%}
       {%- for anchor in links -%}
         {% if anchor == 'casestudies' %}
-          {% assign link_url = '/casestudies/' | relative_url %}
+          {% assign link_url = prefix | append: '/casestudies/' %}
         {% elsif anchor == 'contact' %}
-          {% assign link_url = '/contact/' | relative_url %}
+          {% assign link_url = prefix | append: '/contact/' %}
         {% else %}
-          {% assign link_url = '/' | relative_url | append: '#' | append: anchor %}
+          {% assign link_url = prefix | append: '/' | append: '#' | append: anchor %}
         {% endif %}
-
+        {% assign link_url = link_url | relative_url | remove_first: '/en' %}
         <li class="nav-item">
           <a class="nav-link{% if page.url == link_url %} active{% endif %}" href="{{ link_url }}">
             {{ labels[anchor] | default: anchor | capitalize }}
@@ -46,9 +52,16 @@
         <button id="langToggle" class="btn btn-sm ms-3 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Select language">
           {{ page.lang | upcase }}
         </button>
+        {% if page.lang == 'it' %}
+          {% assign en_url = page.alt_url %}
+          {% assign it_url = page.url %}
+        {% else %}
+          {% assign en_url = page.url %}
+          {% assign it_url = page.alt_url %}
+        {% endif %}
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="langToggle">
-          <li><a class="dropdown-item{% if page.lang == 'en' %} active{% endif %}" href="{{ page.url | relative_url }}">English</a></li>
-          <li><a class="dropdown-item{% if page.lang == 'it' %} active{% endif %}" href="{{ page.alt_url | relative_url }}">Italiano</a></li>
+          <li><a class="dropdown-item{% if page.lang == 'en' %} active{% endif %}" href="{{ en_url | relative_url | remove_first: '/en' }}">English</a></li>
+          <li><a class="dropdown-item{% if page.lang == 'it' %} active{% endif %}" href="{{ it_url | relative_url | remove_first: '/en' }}">Italiano</a></li>
         </ul>
       </li>
       {% endif %}

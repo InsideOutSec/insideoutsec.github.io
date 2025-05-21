@@ -39,7 +39,7 @@ layout: default
     <!-- CTA row -->
     <div class="container py-5">
       <div class="d-flex justify-content-between align-items-center">
-        <a href="{{ '/' | relative_url }}casestudies/" class="btn btn-outline-primary">
+        <a href="{% if page.lang == 'it' %}/it/casestudies/{% else %}/casestudies/{% endif %}" class="btn btn-outline-primary">
           {% if page.lang == 'it' %}← Tutti i case study{% else %}← Back to all case studies{% endif %}
         </a>
         <a href="{% if page.lang == 'it' %}/it/contact/{% else %}/contact/{% endif %}" class="btn btn-primary">
