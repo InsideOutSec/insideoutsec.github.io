@@ -100,7 +100,7 @@ function initHCaptcha() { reloadHCaptcha(); }
     window.addEventListener('themechange', reloadHCaptcha);
   
     const form = document.getElementById('contact-form');
-    form.addEventListener('submit', function (e) {
+    form?.addEventListener('submit', function (e) {
       const hCaptcha = form.querySelector('textarea[name="h-captcha-response"]')?.value;
       if (!hCaptcha) {
         e.preventDefault();
