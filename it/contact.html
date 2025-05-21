@@ -31,7 +31,7 @@ alt_url: /contact/
     </div>
     
     {% if page.url == "/contact/" or page.url == "/it/contact/" %}
-      <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+      <script src="https://js.hcaptcha.com/1/api.js?onload=initHCaptcha&render=explicit" async defer></script>
     {% endif %}
 
     <!-- 🛡️ hCaptcha box -->
@@ -40,7 +40,6 @@ alt_url: /contact/
            data-captcha="true"
            data-lang="it"
            data-theme="dark"
-           data-render="explicit"
            data-size="compact" id="captcha-container"></div>
     </div>
   
