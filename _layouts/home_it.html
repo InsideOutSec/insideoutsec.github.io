@@ -9,9 +9,14 @@ layout: default
 
   <div class="container" data-aos="fade-up">
     <h1 class="visually-hidden">{{ site.title }} – Offensive Cybersecurity Firm</h1>
+   <!-- Optimised logo -->
     <picture>
       <source srcset="{{ '/assets/img/InsideOutSec_logo.avif' | relative_url }}" type="image/avif">
-      <img src="{{ '/assets/img/InsideOutSec_logo.png' | relative_url }}" alt="InsideOut Sec Logo" loading="lazy">
+      <source srcset="{{ '/assets/img/InsideOutSec_logo.webp' | relative_url }}" type="image/webp">
+      <img src="{{ '/assets/img/InsideOutSec_logo.png' | relative_url }}"
+           alt="InsideOut Sec Logo"
+           loading="lazy"
+           decoding="async">
     </picture>
     <p class="lead">Pensa come un attaccante. Difenditi da professionista.</p>
     <div id="hero-logo-marker"></div>
