@@ -77,12 +77,14 @@
       "name": "{{ page.service_name | default: page.title | escape }}",
       "serviceType": "{{ page.service_type | default: page.title | escape }}",
       "provider": { "@type": "Organization", "name": "{{ site.title | escape }}", "url": "{{ site.url }}" },
-      "areaServed": [
-      {%- assign areas = page.area_served | default: "Italy" -%}
-      {%- unless areas.is_a? Array -%}{%- assign areas = areas | split: "," -%}{%- endunless -%}
-      {%- for a in areas -%}
-        { "@type": "AdministrativeArea", "name": "{{ a | strip }}" }{%- unless forloop.last -%},{%- endunless -%}
-      {%- endfor -%}
+          "areaServed": [
+      {%- if page.area_served -%}
+        {%- for a in page.area_served -%}
+          { "@type": "AdministrativeArea", "name": "{{ a | strip }}" }{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
+      {%- else -%}
+        { "@type": "AdministrativeArea", "name": "Italy" }
+      {%- endif -%}
     ],
       "url": "{{ page_url }}" {% if page.offers_price %},
       "offers": { "@type": "Offer", "price": "{{ page.offers_price }}", "priceCurrency": "EUR" }{% endif %}
