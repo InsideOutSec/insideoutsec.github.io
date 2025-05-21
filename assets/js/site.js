@@ -13,6 +13,8 @@
     }
   })();
 
+  function initHCaptcha() { reloadHCaptcha(); }
+
    document.addEventListener("DOMContentLoaded", function () {
     /* Theme elements */
     const root   = document.documentElement;
@@ -94,7 +96,6 @@
       hcaptcha.render('captcha-container');
     }
   
-    reloadHCaptcha();
     window.addEventListener('themechange', reloadHCaptcha);
   
     const form = document.getElementById('contact-form');
