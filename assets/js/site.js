@@ -3,17 +3,31 @@
    Global JS – InsideOut Sec (Optimized)
    ========================================================= */
 
-  (function() {
-    const userLang = navigator.languages && navigator.languages.length ? navigator.languages[0] : navigator.language;
-    if (userLang && userLang.toLowerCase().startsWith('it')) {
-      const path = window.location.pathname;
-      if (path === '/' || path === '/index.html') {
-        window.location.replace('/it/');
-      }
-    }
-  })();
 
-  function initHCaptcha() { reloadHCaptcha(); }
+(function() {
+  const userLang = navigator.languages && navigator.languages.length ? navigator.languages[0] : navigator.language;
+  if (userLang && userLang.toLowerCase().startsWith('it')) {
+    const path = window.location.pathname;
+    if (path === '/' || path === '/index.html') {
+      window.location.replace('/it/');
+    }
+  }
+})();
+
+function reloadHCaptcha() {
+  const container = document.getElementById('captcha-container');
+  if (!container || typeof hcaptcha === 'undefined') return;
+  const root = document.documentElement;
+  const currentTheme = root.dataset.theme === 'light' ? 'light' : 'dark';
+  const newNode = container.cloneNode(false);
+  newNode.setAttribute('data-sitekey', 'aafc0478-921a-47dc-bd04-9ad671ea5224');
+  newNode.setAttribute('data-theme', currentTheme);
+  newNode.id = 'captcha-container';
+  container.replaceWith(newNode);
+  hcaptcha.render('captcha-container');
+}
+
+function initHCaptcha() { reloadHCaptcha(); }
 
    document.addEventListener("DOMContentLoaded", function () {
     /* Theme elements */
@@ -84,18 +98,6 @@
     });
   
     /* Reload hCaptcha on theme change + form check */
-    function reloadHCaptcha() {
-      const container = document.getElementById('captcha-container');
-      if (!container || typeof hcaptcha === 'undefined') return;
-      const currentTheme = root.dataset.theme === 'light' ? 'light' : 'dark';
-      const newNode = container.cloneNode(false);
-      newNode.setAttribute('data-sitekey', 'aafc0478-921a-47dc-bd04-9ad671ea5224');
-      newNode.setAttribute('data-theme', currentTheme);
-      newNode.id = 'captcha-container';
-      container.replaceWith(newNode);
-      hcaptcha.render('captcha-container');
-    }
-  
     window.addEventListener('themechange', reloadHCaptcha);
   
     const form = document.getElementById('contact-form');
