@@ -11,6 +11,10 @@ schema_type: "Service"
 service_name: "Penetration Testing & Red Teaming"
 service_type: "Offensive Security Service"
 offers_price: "from 4500"
+area_served:
+  - "Italy"
+  - "European Union"
+  - "Switzerland"
 faqs:
   - question: "How long does a penetration test take?"
     answer:  "Typical projects run 2–4 weeks, depending on scope and asset count."

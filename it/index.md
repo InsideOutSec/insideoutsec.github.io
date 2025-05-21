@@ -10,6 +10,10 @@ alt_url: /
 schema_type: "Service"
 service_name: "Penetration Test e Red Teaming"
 service_type: "Servizio di Penetration Test e Red Team"
+area_served:
+  - "Italia"
+  - "Unione Europea"
+  - "Svizzera"
 offers_price: "da 3500"
 faqs:
   - question: "Quanto dura un penetration test?"
