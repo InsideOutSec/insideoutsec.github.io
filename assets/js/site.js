@@ -20,7 +20,6 @@ function reloadHCaptcha() {
   const root = document.documentElement;
   const currentTheme = root.dataset.theme === 'light' ? 'light' : 'dark';
   const newNode = container.cloneNode(false);
-  newNode.setAttribute('data-sitekey', 'aafc0478-921a-47dc-bd04-9ad671ea5224');
   newNode.setAttribute('data-theme', currentTheme);
   newNode.id = 'captcha-container';
   container.replaceWith(newNode);
@@ -101,11 +100,12 @@ function initHCaptcha() { reloadHCaptcha(); }
     window.addEventListener('themechange', reloadHCaptcha);
   
     const form = document.getElementById('contact-form');
-    form?.addEventListener('submit', function (e) {
+    form.addEventListener('submit', function (e) {
       const hCaptcha = form.querySelector('textarea[name="h-captcha-response"]')?.value;
       if (!hCaptcha) {
         e.preventDefault();
         alert("Please complete the CAPTCHA.");
+        return
       }
     });
   
